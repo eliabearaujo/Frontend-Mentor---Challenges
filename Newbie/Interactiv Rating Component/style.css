@@ -1,0 +1,129 @@
+:root {
+  /* ## Colors */
+  /* ### Primary */
+  --orange: #fb7413;
+
+  /* ### Neutral */
+  --White: #ffffff;
+  --Light-Grey: #959eac;
+  --Medium-Grey: #7c8798;
+  --Dark-Blue: #252d37;
+  --Very-Dark-Blue: #121417;
+  --Black: #000000;
+
+  /* ## Typography */
+  --font1: "Overpass", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: var(--Black);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font1);
+}
+
+.container-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+.container {
+  background: var(--Very-Dark-Blue);
+  width: 375px;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.star-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--Dark-Blue);
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  justify-self: start;
+  margin-bottom: 15px;
+}
+.container h1 {
+  color: var(--White);
+  font-weight: 400;
+  font-size: 1.6rem;
+  grid-column: 1/-1;
+}
+.container p {
+  color: var(--Light-Grey);
+  grid-column: 1/-1;
+  font-size: 0.9rem;
+}
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  grid-column: 1/-1;
+}
+.btn-container button {
+  background: var(--Dark-Blue);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--Medium-Grey);
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn-container button:hover {
+  background: var(--Light-Grey);
+  color: var(--White);
+}
+.btn-container button:focus {
+  background: var(--orange);
+  color: var(--White);
+}
+.container .submit {
+  grid-column: 1/-1;
+  background: var(--orange);
+  text-transform: uppercase;
+  color: var(--White);
+  letter-spacing: 2px;
+  font-weight: bold;
+  border-radius: 50px;
+  padding: 15px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.container .submit:active {
+  background: var(--White);
+  color: var(--orange);
+}
+.thank-you-card .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.score {
+  background: var(--Dark-Blue);
+  padding: 7px 15px;
+  border-radius: 50px;
+}
+.score p {
+  color: var(--orange);
+  font-size: 0.9rem;
+}
+.thank-you-card .container > p {
+  font-size: 0.9rem;
+  text-align: center;
+}
+.ocultar {
+  display: none;
+}
