@@ -13,13 +13,10 @@
 </head>
 
 <body>
+  <div class="logo-container" id="logo-container">
+    <img class="logo" src="./images/logo.svg" alt="Logo">
+  </div>
   <div class="container" id="container">
-    <div class="logo" id="logo">
-      <img src="./images/logo.svg" alt="Logo">
-    </div>
-    <div class="mobile-hero" id="mobile-hero">
-      <img src="./images/hero-mobile.jpg" alt="Hero">
-    </div>
     <div class="content" id="content">
       <h1>
         <span>we're</span><br>
@@ -27,19 +24,18 @@
         soon
       </h1>
       <p>Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
+      <form action="#">
+        <input type="email" placeholder="Email Adress">
+        <button type="submit">
+          <img src="./images/icon-arrow.svg" alt="">
+        </button>
+        <img src="./images/icon-error.svg" alt="" class="error-icon" id="error-icon">
+        <p class="text-error">Please provide a valid email</p>
+      </form>
     </div>
-    <div class="form" id="form">
-      <input type="text" placeholder="Email Adress">
-      <img src="./images/icon-error.svg" alt="" class="error-icon" id="error-icon">
-      <button>
-        <img src="./images/icon-arrow.svg" alt="">
-      </button>
-      <p class="text-error">Please provide a valid email</p>
-    </div>
+
   </div>
-  <div class="desktop-hero" id="desktop-hero">
-    <img src="./images/hero-desktop.jpg" alt="">
-  </div>
+  <div class="hero" id="hero"></div>
 
 
   <script src="./script.js"></script>
