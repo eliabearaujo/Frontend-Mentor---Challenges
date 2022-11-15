@@ -22,6 +22,7 @@ body {
   justify-content: flex-end;
   flex-direction: column-reverse;
   text-align: center;
+  background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
 }
 .content {
   width: 100%;
@@ -107,4 +108,20 @@ h1 span {
   padding: 10px;
   color: #ce9797;
   display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .logo-container {
+    position: absolute;
+    padding-left: 10%;
+  }
+  .container {
+    flex-direction: row;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .hero {
+    width: 80%;
+    height: 100vh;
+  }
 }
