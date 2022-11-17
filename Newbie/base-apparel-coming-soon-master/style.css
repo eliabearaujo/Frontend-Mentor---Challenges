@@ -7,6 +7,7 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 16px;
 }
+
 .logo-container {
   height: auto;
   padding: 30px;
@@ -99,13 +100,17 @@ h1 span {
 }
 .error-icon {
   position: absolute;
-  right: 85px;
-  top: 8px;
+  height: 20px;
+  right: 65px;
+  top: 10px;
   display: none;
 }
 .text-error {
+  position: absolute;
+  top: 40px;
   font-size: 14px;
   padding: 10px;
+  padding-left: 20px;
   color: #ce9797;
   display: none;
 }
@@ -123,5 +128,39 @@ h1 span {
   .hero {
     width: 80%;
     height: 100vh;
+    background: url(./images/hero-desktop.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  .content {
+    height: 100vh;
+    padding-top: 28vh;
+    text-align: left;
+    padding-left: 10%;
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+  }
+  h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+  }
+  .description {
+    margin: 0;
+    font-size: 1.1rem;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+  .form {
+    margin: 0;
+  }
+  .form button {
+    width: 70px;
+  }
+  .error-icon {
+    height: 20px;
+    top: 10px;
+    right: 75px;
   }
 }
