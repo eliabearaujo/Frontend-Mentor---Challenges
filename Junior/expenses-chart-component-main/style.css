@@ -80,6 +80,14 @@ h3 {
 .var small {
   font-weight: 700;
 }
+.chart {
+  height: 100%;
+}
+.bar {
+  height: 28%;
+  background-color: #000;
+  width: 50px;
+}
 
 @media only screen and (max-width: 475px) {
   .wrapper {
