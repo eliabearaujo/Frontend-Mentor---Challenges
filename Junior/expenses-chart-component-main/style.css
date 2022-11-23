@@ -39,7 +39,7 @@ h3 {
   background-color: hsl(33, 100%, 98%);
   border-radius: 16px;
   margin-top: 15px;
-  padding: 15px 10px;
+  padding: 20px 20px 25px 20px;
 }
 .main h1 {
   font-size: 30px;
@@ -47,8 +47,9 @@ h3 {
 }
 .charts {
   height: 230px;
-  background: hsl(27, 66%, 92%);
   margin-bottom: 15px;
+  display: flex;
+  justify-content: space-around;
 }
 .main hr {
   height: 2px;
@@ -82,11 +83,26 @@ h3 {
 }
 .chart {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
 }
 .bar {
-  height: 28%;
-  background-color: #000;
+  background-color: hsl(10, 79%, 65%);
   width: 50px;
+  border-radius: 5px;
+}
+.title {
+  font-size: 15px;
+  color: hsl(28, 10%, 53%);
+}
+.amount {
+  background-color: #000;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 15px;
 }
 
 @media only screen and (max-width: 475px) {
