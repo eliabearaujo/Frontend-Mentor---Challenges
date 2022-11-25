@@ -83,6 +83,7 @@ h3 {
 }
 .chart {
   height: 100%;
+  width: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -90,7 +91,7 @@ h3 {
 }
 .bar {
   background-color: hsl(10, 79%, 65%);
-  width: 50px;
+  width: 100%;
   border-radius: 5px;
 }
 .title {
@@ -102,7 +103,8 @@ h3 {
   color: white;
   border-radius: 5px;
   padding: 5px;
-  font-size: 15px;
+  font-size: 13px;
+  width: 100%;
 }
 
 @media only screen and (max-width: 475px) {
