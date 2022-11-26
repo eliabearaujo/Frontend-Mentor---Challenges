@@ -2,6 +2,7 @@ const chartsArea = document.querySelector('.charts');
 
 let date = new Date();
 let hoje = date.getDay();
+console.log(hoje);
 
 //Fetch JSON
 async function fecthData() {
@@ -31,5 +32,12 @@ async function generateBars(elementList) {
       amounts[index].style.display = 'none';
     });
   });
+
+  if (hoje == 0) {
+    bars[6].style.backgroundColor = 'hsl(186, 34%, 60%)';
+  } else {
+    bars[hoje - 1].style.backgroundColor = 'hsl(186, 34%, 60%)';
+  }
 }
+
 fecthData();
