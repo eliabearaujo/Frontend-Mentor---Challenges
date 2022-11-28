@@ -2,17 +2,70 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
 }
 body {
-  font-family: 'Manrope', sans-serif;
   font-size: 28px;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  align-items: center;
   flex-direction: column;
+  background-color: hsl(218, 23%, 16%);
 }
 .wrapper {
-  background-color: blue;
-  width: 90%;
+  background-color: hsl(217, 19%, 24%);
+  width: 345px;
+  min-height: 300px;
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px;
+  position: relative;
+}
+small {
+  color: hsl(150, 100%, 66%);
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 3.5px;
+  margin-top: 20px;
+}
+.advice {
+  font-size: 22px;
+  font-weight: bold;
+  color: hsl(193, 38%, 86%);
+  font-family: 'Manrope', sans-serif;
+  margin-top: 20px;
+}
+.divider {
+  position: absolute;
+  top: 220px;
+}
+.dice {
+  position: absolute;
+  cursor: pointer;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: hsl(150, 100%, 66%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: -30px;
+}
+.dice:hover {
+  filter: drop-shadow(0 0px 0.75rem hsl(150, 100%, 66%));
+  transition: all 0.1s ease-out;
+}
+@media screen and (min-width: 500px) {
+  body {
+    justify-content: center;
+  }
+  .wrapper {
+    width: 450px;
+    margin: 0;
+  }
 }

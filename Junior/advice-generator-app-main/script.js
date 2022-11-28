@@ -9,8 +9,15 @@ async function fetchData() {
 }
 
 function changeContent(data) {
+  const aspas = '"';
   id.innerText = data.slip.id;
   advice.innerText = data.slip.advice;
+}
+
+dice.addEventListener('click', handleClick);
+
+function handleClick() {
+  fetchData();
 }
 
 fetchData();
