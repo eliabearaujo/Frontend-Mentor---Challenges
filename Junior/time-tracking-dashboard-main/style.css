@@ -1,0 +1,50 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: grid;
+  place-items: center;
+  font-family: 'Rubik', sans-serif;
+}
+.container {
+  display: grid;
+  width: 90%;
+  margin: 70px 15px;
+}
+.main-card {
+  background-color: hsl(235, 46%, 20%);
+  height: 175px;
+  border-radius: 10px;
+}
+.user-info {
+  background-color: hsl(246, 80%, 60%);
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: repeat(2, 1fr);
+  height: 80%;
+  border-radius: 10px;
+  padding: 20px;
+}
+.user-avatar {
+  width: 70px;
+  grid-row: 1/-1;
+  align-self: center;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+.user-info .user-name {
+  font-weight: 300;
+  font-size: 28px;
+}
+.menu {
+  display: flex;
+  justify-content: space-around;
+}
+.menu li {
+  list-style: none;
+}
+.menu li a {
+  text-decoration: none;
+}
