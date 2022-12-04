@@ -58,16 +58,36 @@ body {
   text-decoration: none;
   color: hsl(235, 45%, 61%);
 }
-
+.container div:nth-of-type(2) {
+  background-color: hsl(15, 100%, 70%);
+}
+.container div:nth-of-type(3) {
+  background-color: hsl(195, 74%, 62%);
+}
+.container div:nth-of-type(4) {
+  background-color: hsl(348, 100%, 68%);
+}
+.container div:nth-of-type(5) {
+  background-color: hsl(145, 58%, 55%);
+}
+.container div:nth-of-type(6) {
+  background-color: hsl(264, 64%, 52%);
+}
+.container div:nth-of-type(7) {
+  background-color: hsl(43, 84%, 65%);
+}
 .card-wrapper {
   display: flex;
   flex-direction: column;
   height: 175px;
-  width: 90%;
-  background-color: blue;
+  width: 100%;
+  position: relative;
 }
 .card-wrapper img {
   height: 50px;
   width: 50px;
   align-self: flex-end;
+  position: absolute;
+  top: -5px;
+  /* overflow: hidden; */
 }
