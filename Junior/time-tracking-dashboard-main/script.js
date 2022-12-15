@@ -7,17 +7,20 @@ const previous_time = document.querySelectorAll('.previous-time');
 async function fetchData() {
   const dataPromise = await fetch('./data.json');
   const data = await dataPromise.json();
+  categoryUpdate(data);
+  console.log(data);
   return await data;
 }
+fetchData();
 
-const result = fetchData();
-console.log(result);
-
-function categoryUpdate() {
-  category.forEach((category) => {
-    category.innerText = 'data.';
+function categoryUpdate(data) {
+  category.forEach((category, index) => {
+    category.innerText = data[index].title;
   });
 }
-function dailyUpdate() {}
+
+function dailyUpdate() {
+  this.style.color = 'white';
+}
 
 links[0].addEventListener('click', dailyUpdate);
