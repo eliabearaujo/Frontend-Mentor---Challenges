@@ -60,10 +60,12 @@ body {
 .menu li a {
   text-decoration: none;
   color: hsl(235, 45%, 61%);
+  text-transform: capitalize;
 }
 .menu li a:hover {
   color: white;
 }
+
 .container div:nth-of-type(2) {
   background-color: hsl(15, 100%, 70%);
 }
@@ -195,5 +197,6 @@ body {
   .previous {
     grid-row: 3;
     justify-self: flex-start;
+    grid-column: span 2;
   }
 }
