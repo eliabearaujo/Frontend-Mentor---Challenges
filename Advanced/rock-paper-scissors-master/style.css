@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #141539;
+  background-image: linear-gradient(0deg, #141539 57%, #1f3756 100%);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.container {
+  width: 1000px;
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid hsl(217, 16%, 45%);
+  width: 60%;
+  padding: 15px 20px;
+}
+.rules-img {
+  display: none;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
