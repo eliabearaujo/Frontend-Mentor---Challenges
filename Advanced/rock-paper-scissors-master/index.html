@@ -18,57 +18,54 @@
       <img class="logo" src="./images/logo-bonus.svg" alt="Logo">
       <div class="score-container">
         <p class="score-title">score</p>
-        <p class="score">12</p>
+        <p class="score">0</p>
       </div>
     </header>
     <main class="choices">
       <img src="./images/bg-pentagon.svg" alt="" class="pentagon">
-      <button class="option btn-tesoura">
-        <span class="wrapper">
-          <img src="./images/icon-scissors.svg" alt="" class="tesoura">
+      <button class="option btn-tesoura" data-number="0">
+        <span class="wrapper" data-number="0">
+          <img src="./images/icon-scissors.svg" alt="" class="tesoura" data-number="0">
         </span>
       </button>
-      <button class="option btn-papel">
-        <span class="wrapper">
-          <img src="./images/icon-paper.svg" alt="" class="papel">
+      <button class="option btn-papel" data-number="1">
+        <span class="wrapper" data-number="1">
+          <img src="./images/icon-paper.svg" alt="" class="papel" data-number="1">
         </span>
       </button>
-      <button class="option btn-pedra">
-        <span class="wrapper">
-          <img src="./images/icon-rock.svg" alt="" class="pedra">
+      <button class="option btn-pedra" data-number="2">
+        <span class="wrapper" data-number="2">
+          <img src="./images/icon-rock.svg" alt="" class="pedra" data-number="2">
         </span>
       </button>
-      <button class="option btn-lizard">
-        <span class="wrapper">
-          <img src="./images/icon-lizard.svg" alt="" class="lizard">
+      <button class="option btn-lizard" data-number="3">
+        <span class="wrapper" data-number="3">
+          <img src="./images/icon-lizard.svg" alt="" class="lizard" data-number="3">
         </span>
       </button>
-      <button class="option btn-spock">
-        <span class="wrapper">
-          <img src="./images/icon-spock.svg" alt="" class="spock">
+      <button class="option btn-spock" data-number="4">
+        <span class="wrapper" data-number="4">
+          <img src="./images/icon-spock.svg" alt="" class="spock" data-number="4">
         </span>
       </button>
     </main>
+    <div class="step-2">
+      <p class=" pick p-pick">You picked</p>
+      <p class="pick h-pick">The house picked</p>
+      <div class="p-choice"></div>
+      <div class="h-choice"></div>
+    </div>
     <div class="rules">rules</div>
-    <img class="rules-img" src="./images/image-rules-bonus.svg" alt="">
+    <section class="modal-container">
+      <div class="modal">
+        <img class="fechar" src="./images/icon-close.svg" alt="">
+        <p class="modal-title">Rules</p>
+        <img class="rules-img" src="./images/image-rules-bonus.svg" alt="">
+      </div>
+    </section>
   </div>
-  Score
-  Rules
 
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again
-
-
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <script src="./script.js"></script>
 </body>
 
 </html>

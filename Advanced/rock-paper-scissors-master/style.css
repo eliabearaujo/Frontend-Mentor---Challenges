@@ -4,8 +4,11 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #141539;
-  background-image: linear-gradient(0deg, #141539 57%, #1f3756 100%);
+  background: radial-gradient(
+    circle at 50% 10%,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -29,6 +32,7 @@ body {
   width: 60%;
   padding: 15px 20px;
   border-radius: 15px;
+  margin-top: 40px;
 }
 .logo {
   height: 100px;
@@ -54,17 +58,25 @@ body {
 }
 
 /* ESCOLHAS */
-.pentagon {
-  display: none;
-}
+
 .choices {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* flex-direction: column; */
+  flex-direction: column;
   margin-top: 50px;
+  position: relative;
+}
+.choices.hide {
+  display: none;
+}
+.pentagon {
+  margin-top: 80px;
+  height: 350px;
+  width: 350px;
 }
 .option {
+  position: absolute;
   border: none;
   height: 120px;
   width: 120px;
@@ -72,18 +84,25 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: inset 0 -6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 .option .wrapper {
   height: 90px;
   width: 90px;
+  box-shadow: inset 0 6px rgba(0, 0, 0, 0.15);
   background-color: white;
   display: inline-flex;
   border-radius: 50%;
   align-items: center;
   justify-content: center;
 }
+.option .wrapper:hover {
+  opacity: 0.9;
+}
 .btn-tesoura {
   background: linear-gradient(to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  top: 30px;
 }
 .btn-papel {
   background: linear-gradient(
@@ -91,6 +110,7 @@ body {
     hsl(230, 89%, 62%),
     hsl(230, 89%, 65%)
   );
+  right: -60px;
 }
 .btn-pedra {
   background: linear-gradient(
@@ -98,6 +118,8 @@ body {
     hsl(349, 71%, 52%),
     hsl(349, 70%, 56%)
   );
+  bottom: -40px;
+  right: 0;
 }
 .btn-lizard {
   background: linear-gradient(
@@ -105,6 +127,8 @@ body {
     hsl(261, 73%, 60%),
     hsl(261, 72%, 63%)
   );
+  bottom: -40px;
+  left: 0;
 }
 .btn-spock {
   background: linear-gradient(
@@ -112,20 +136,117 @@ body {
     hsl(189, 59%, 53%),
     hsl(189, 58%, 57%)
   );
+  left: -60px;
 }
-/* .options img {
-  display: block;
-  height: 50px;
-} */
-.rules-img {
+.step-2 {
+  margin-top: 80px;
   display: none;
+  grid-template-columns: repeat(2, 1fr);
+  color: white;
+  text-transform: uppercase;
+  font-family: inherit;
+  justify-items: center;
+  min-width: 60%;
+  gap: 80px;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.step-2.ativo {
+  display: grid;
+}
+.p-choice,
+.h-choice {
+  width: 200px;
+  height: 200px;
+  background-color: hsl(237, 49%, 15%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.p-choice .picked,
+.h-choice .picked {
+  border: none;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 -6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+.p-choice .picked .wrapper,
+.h-choice .picked .wrapper {
+  height: 150px;
+  width: 150px;
+  box-shadow: inset 0 6px rgba(0, 0, 0, 0.15);
+  background-color: white;
+  display: inline-flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+.picked .wrapper img {
+  height: 80px;
+}
+/* Rules button */
+
+.rules {
+  text-transform: uppercase;
+  color: white;
+  font-family: inherit;
+  font-size: 12px;
+  border: 1px solid hsl(217, 16%, 45%);
+  border-radius: 5px;
+  padding: 4px 20px;
+  cursor: pointer;
+  margin-top: 100px;
+  align-self: flex-end;
 }
 
-.attribution {
-  font-size: 11px;
-  text-align: center;
+/* MODAL */
+.modal-container {
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
-.attribution a {
-  color: hsl(228, 45%, 44%);
+.modal-container.ativo {
+  display: flex;
+}
+
+.modal {
+  background: white;
+  min-width: 350px;
+  border-radius: 3px;
+  box-shadow: 0 0 0 10px white;
+  position: relative;
+  padding: 20px;
+  min-height: 450px;
+}
+.modal-title {
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: hsl(237, 49%, 15%);
+  font-family: inherit;
+}
+.fechar {
+  top: 20px;
+  right: 20px;
+  position: absolute;
+  cursor: pointer;
+}
+.rules-img {
+  margin-top: 30px;
+  display: block;
 }
