@@ -146,6 +146,7 @@ body {
   text-transform: uppercase;
   font-family: inherit;
   justify-items: center;
+  align-items: center;
   min-width: 60%;
   gap: 80px;
   font-weight: 600;
@@ -154,6 +155,9 @@ body {
 }
 .step-2.ativo {
   display: grid;
+}
+.step-2.ativo.colunas {
+  grid-template-columns: repeat(3, 1fr);
 }
 .p-choice,
 .h-choice {
@@ -164,6 +168,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* box-shadow: 0px 0px 134px 55px lightgrey; */
+}
+.p-choice {
+  grid-column: 1;
+}
+.h-pick.ativo {
+  grid-column: 3;
 }
 .p-choice .picked,
 .h-choice .picked {
@@ -175,7 +186,6 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: inset 0 -6px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
 }
 .p-choice .picked .wrapper,
 .h-choice .picked .wrapper {
@@ -249,4 +259,32 @@ body {
 .rules-img {
   margin-top: 30px;
   display: block;
+}
+.end-game {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+.end-game.ativo {
+  display: flex;
+}
+.definition {
+  color: white;
+  font-family: inherit;
+  font-size: 46px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.again {
+  background-color: white;
+  text-align: center;
+  margin-top: 5px;
+  text-transform: uppercase;
+  color: hsl(237, 49%, 15%);
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 8px 30px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  cursor: pointer;
 }

@@ -7,6 +7,11 @@ const opcoes = document.querySelectorAll('.option');
 const stepTwo = document.querySelector('.step-2');
 const pChoice = document.querySelector('.p-choice');
 const hChoice = document.querySelector('.h-choice');
+const score = document.querySelector('.score');
+const textHPick = document.querySelector('.h-pick');
+const winText = document.querySelector('.definition');
+const endGameContainer = document.querySelector('.end-game');
+const playAgainButton = document.querySelector('.again');
 
 //Adiciona a classe ativo ao modal
 function toggleModal() {
@@ -43,29 +48,21 @@ init();
 
 //Desenvolvimento do jogo
 
-opcoes.forEach((opcao) => {
-  opcao.addEventListener('click', playerPick);
-});
-
-// Ideia de refatoração para amanha ...
-// Criar uma função apenas para escolha do player.
-// Criar uma função apenas para escolha da casa.
-// Criar uma função que cria o elemento do player.
-// Criar uma função com tempo que será chamada após a execução da criação do player e criara a escolha da casa.
+function addEvents() {
+  opcoes.forEach((opcao) => {
+    opcao.addEventListener('click', playerPick);
+  });
+  playAgainButton.addEventListener('click', startOver);
+}
+addEvents();
 
 function playerPick(event) {
-  hideOptions();
   const indexClicado = event.target.getAttribute('data-number');
-  const novoElemento = opcoes[indexClicado];
-  novoElemento.classList.remove('option');
-  novoElemento.classList.add('picked');
-  const novoElementoCasa = opcoes[housePick()];
-  novoElementoCasa.classList.remove('option');
-  novoElementoCasa.classList.add('picked');
-  pChoice.appendChild(novoElemento);
-  hChoice.appendChild(novoElementoCasa);
-  console.log(pChoice);
-  console.log(hChoice);
+  const houseChoice = housePick();
+  createElements(indexClicado, houseChoice);
+  setTimeout(() => {
+    checkWin(indexClicado, houseChoice);
+  }, 300);
 }
 
 function housePick() {
@@ -75,7 +72,51 @@ function housePick() {
   return escolhaDaCasa;
 }
 
-function hideOptions() {
+function moveToStepTwo() {
   containerOpcoes.classList.add('hide');
   stepTwo.classList.add('ativo');
+}
+
+function createElements(playerChoice, houseChoice) {
+  moveToStepTwo();
+  const clonePlayerChoice = opcoes[playerChoice].cloneNode(true);
+  const cloneHouseChoice = opcoes[houseChoice].cloneNode(true);
+  clonePlayerChoice.removeEventListener('click', playerPick);
+  cloneHouseChoice.removeEventListener('click', playerPick);
+  clonePlayerChoice.classList.remove('option');
+  clonePlayerChoice.classList.add('picked');
+  cloneHouseChoice.classList.remove('option');
+  cloneHouseChoice.classList.add('picked');
+  pChoice.appendChild(clonePlayerChoice);
+  setTimeout(() => {
+    hChoice.appendChild(cloneHouseChoice);
+  }, 300);
+}
+
+function checkWin(playerChoice, houseChoice) {
+  const calc = playerChoice - houseChoice;
+  let win = '';
+  if (playerChoice == houseChoice) {
+    win = 'Draw';
+  } else if ((calc % 2 != 0 && calc < 0) || (calc % 2 === 0 && calc > 0)) {
+    score.innerText = +`${score.innerText}` + 1;
+    pChoice.style.boxShadow = ' 0px 0px 134px 55px lightgrey';
+    win = 'You win';
+  } else {
+    hChoice.style.boxShadow = ' 0px 0px 134px 55px lightgrey';
+    win = 'You lose';
+  }
+  winText.innerText = `${win}`;
+  textHPick.classList.add('ativo');
+  stepTwo.classList.add('colunas');
+  endGameContainer.classList.add('ativo');
+}
+
+function startOver() {
+  stepTwo.classList.remove('ativo');
+  containerOpcoes.classList.remove('hide');
+  pChoice.innerHTML = '';
+  hChoice.innerHTML = '';
+  pChoice.style.boxShadow = '';
+  hChoice.style.boxShadow = '';
 }
